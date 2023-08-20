@@ -3,9 +3,8 @@ FROM ubuntu:bionic
 LABEL maintainer="jrandiny <jrandiny@gmail.com>"
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN tty
-RUN echo $(tty)
-
+RUN echo $(tty || true)
+ENV GPG_TTY="not a tty"
 RUN apt update
 RUN apt install -y reprepro gpg python3 python3-git python3-gnupg expect python3-debian
 
