@@ -11,12 +11,16 @@ from debian.debfile import DebFile
 from key import detectPublicKey, importPrivateKey
 
 debug = os.environ.get('INPUT_DEBUG', True)
-os.environ['GPG_TTY'] = os.ttyname(0)
+my_tty = os.environ.get('GPG_TTY')
+
+
 
 if debug:
     logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
 else:
     logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
+
+logging.info(my_tty)
 
 if __name__ == '__main__':
     logging.info('-- Parsing input --')
