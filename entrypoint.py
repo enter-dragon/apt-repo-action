@@ -180,7 +180,7 @@ if __name__ == '__main__':
         sys.exit(reprepro_includedeb_exit)
 
     logging.debug('Signing to unlock key on gpg agent')
-    if len(key_passphrase.length == 0):
+    if len(key_passphrase) == 0:
         logging.debug('signing WITHOUT passphrase')
         key_passpgpg.sign('test', keyid=private_key_id)
     else:
