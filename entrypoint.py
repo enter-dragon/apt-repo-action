@@ -182,10 +182,10 @@ if __name__ == '__main__':
     logging.debug('Signing to unlock key on gpg agent')
     if len(key_passphrase) == 0:
         logging.debug('signing WITHOUT passphrase')
-        key_passpgpg.sign('test', keyid=private_key_id)
+        gpg.sign('test', keyid=private_key_id)
     else:
         logging.debug('signing WITH passphrase')
-        key_passpgpg.sign('test', keyid=private_key_id, passphrase=key_passphrase)
+        gpg.sign('test', keyid=private_key_id, passphrase=key_passphrase)
 
 
     logging.debug('Export and sign repo')
